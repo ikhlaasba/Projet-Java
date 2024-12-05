@@ -29,3 +29,4 @@ public class Chambre{
         return "Num: "+this.num+"Type: "+this.type+"Statut: "+this.statut;
     }
 }
+//test
