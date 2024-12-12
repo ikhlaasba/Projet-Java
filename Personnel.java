@@ -41,6 +41,6 @@ public class Personnel{
         return this.salaire;
     }
     public String toString(){
-        return "NOm: "+this.nom+"Prenom: "+this.prenom+"id: "+this.id+"salaire: "+this.salaire+"Horaire de travail: "+this.Heures_travail;
+        return "Nom: "+this.nom+" Prenom: "+this.prenom+" id: "+this.id+" Salaire: "+this.salaire+" Horaire de travail: "+this.Heures_travail;
     }
 }
