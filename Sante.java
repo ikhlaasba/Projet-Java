@@ -15,8 +15,7 @@ public class Sante extends Personnel{
     public Specialite getSpecialite(){
         return this.specialite;
     }
-    public void setGrade(String grade){//sis hedhi moch lezmha get?
-        this.grade=grade;
+    public void setGrade(String grade){
     }
     public String getGrade(){
         return this.grade;
