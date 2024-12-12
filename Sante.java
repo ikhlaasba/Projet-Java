@@ -15,13 +15,16 @@ public class Sante extends Personnel{
     public Specialite getSpecialite(){
         return this.specialite;
     }
-    public void setGrade(String grade){
+    public void setGrade(String grade){//sis hedhi moch lezmha get?
         this.grade=grade;
     }
     public String getGrade(){
         return this.grade;
     }
+
     public String toString(){
         return super.toString()+" Spécialité: "+this.specialite+" Grade: "+this.grade+"\n";
     }
 }
+
+
