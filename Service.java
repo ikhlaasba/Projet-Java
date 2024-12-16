@@ -5,17 +5,17 @@ public class Service {
 
 
 
-public service(service service,int dure){
+public Service(service service,int dure){
     this.dure=dure;
-    service= srvice;
+    service= service;
 }
-public void setdure(dure){
+public void setdure(int dure){
     this.dure=dure;
 }
 public int getdure(){
     return dure;
 }
-public setservice(service s){
+public void setservice(service s){
     this.service=s;
 }
 public service getservice(){

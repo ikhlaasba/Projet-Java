@@ -1,15 +1,16 @@
 import java.time.LocalDate;
 import java.time.Period;
-import java.util.List;
 
 public class Resident {
+    private int id_resident;
     private String nom;
     private String prenom;
     private LocalDate dateNaissance;
-    private List<String> dossierMedical;
+    private String dossierMedical;
 
     // Constructeur
-    public Resident(String nom, String prenom, LocalDate dateNaissance, List<String> dossierMedical) {
+    public Resident(int id_resident,String nom, String prenom, LocalDate dateNaissance, String dossierMedical) {
+        this.id_resident=id_resident;
         this.nom = nom;
         this.prenom = prenom;
         this.dateNaissance = dateNaissance;
@@ -17,6 +18,9 @@ public class Resident {
     }
 
     // Getters
+    public int getId_resident(){
+        return this.id_resident;
+    }
     public String getNom() {
         return nom;
     }
@@ -29,11 +33,14 @@ public class Resident {
         return dateNaissance;
     }
 
-    public List<String> getDossierMedical() {
+    public String getDossierMedical() {
         return dossierMedical;
     }
 
     // Setters
+    public void setId_resident(int id){
+        this.id_resident=id;
+    }
     public void setNom(String nom) {
         this.nom = nom;
     }
@@ -46,7 +53,7 @@ public class Resident {
         this.dateNaissance = dateNaissance;
     }
 
-    public void setDossierMedical(List<String> dossierMedical) {
+    public void setDossierMedical(String dossierMedical) {
         this.dossierMedical = dossierMedical;
     }
 
