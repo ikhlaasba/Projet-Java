@@ -1,4 +1,5 @@
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.time.LocalDate;
@@ -20,6 +21,9 @@ public class DAL {
                 for (Chambre chambre : chambres) {
                     System.out.println(chambre);  // This is just for testing, can be removed for production
                 }
+                System.out.println(updateResident(1, "bonne sante"));
+                System.out.println(removeResident(1));
+                System.out.println(addResident(1,"flen","fleni",LocalDate.parse("2024-12-16"),"bonne sante"));
             }
         } catch (Exception e) {
             System.out.println("Database connection failed!");
@@ -84,4 +88,71 @@ public class DAL {
 
         return Residents; 
     }
+
+     /********************Update residents******************** */
+
+
+    public static boolean updateResident(int idResident, String newDossierMedical) {
+    String sql = "UPDATE resident SET dossier_medical = ? WHERE id_resident = ?";
+
+    try (Connection conn = DBConnection.connect();
+         PreparedStatement pstmt = conn.prepareStatement(sql)) {
+        
+        
+        pstmt.setString(1, newDossierMedical); 
+        pstmt.setInt(2, idResident);          
+        int lignes = pstmt.executeUpdate();
+        
+        return lignes > 0;
+
+    } catch (Exception e) {
+        System.out.println("Error occurred while updating dossier_medical!");
+        e.printStackTrace();
+        return false;
+    }
+}
+
+ /********************REMOVE RESIDENTS******************** */
+
+public static boolean removeResident(int idResident) {
+    String sql = "DELETE FROM resident WHERE id_resident = ?";
+
+    try (Connection conn = DBConnection.connect();
+         PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+        pstmt.setInt(1, idResident); 
+        int affectedRows = pstmt.executeUpdate();
+
+        return affectedRows > 0; 
+
+    } catch (Exception e) {
+        System.out.println("Error occurred while removing the resident!");
+        e.printStackTrace();
+        return false; 
+    }
+}
+/********************add RESIDENTS******************** */
+public static boolean addResident(int id_resident, String nom, String prenom, LocalDate date_naissance, String dossier_medical) {
+    String sql = "INSERT INTO resident (id_resident, nom, prenom, date_naissance, dossier_medical) VALUES (?, ?, ?, ?, ?)";
+
+    try (Connection conn = DBConnection.connect();
+         PreparedStatement pstmt = conn.prepareStatement(sql)) {
+        
+        pstmt.setInt(1, id_resident); // Set the id_resident
+        pstmt.setString(2, nom);
+        pstmt.setString(3, prenom);
+        pstmt.setObject(4, date_naissance); // Pass LocalDate directly
+        pstmt.setString(5, dossier_medical);
+
+        int affectedRows = pstmt.executeUpdate();
+        return affectedRows > 0; // Returns true if the insert was successful
+
+    } catch (Exception e) {
+        System.out.println("Error occurred while adding the resident!");
+        e.printStackTrace();
+        return false;
+    }
+}
+
+
 }

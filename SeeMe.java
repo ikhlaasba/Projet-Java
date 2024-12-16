@@ -6,3 +6,6 @@
 -3malt compile lel files kol adhakaaleh tzadou .class files 
 -zedt SeeMe File 
 */
+/*ikhlas:
+3malt l create/ update / delete / selcectALl mta3 residents w selectAll chambres
+*/
