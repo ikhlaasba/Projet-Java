@@ -1,8 +1,8 @@
 public class Administratif extends Personnel{
     private String responsabilite;
     private int numero_bureau;
-    public Administratif(int id,String nom,String Prenom,int Heures_travail,String responsabilite,int numero_bureau){
-        super(id,nom, Prenom,Heures_travail);
+    public Administratif(int id,String nom,String Prenom,int Heures_travail,String responsabilite,int numero_bureau,double salaire){
+        super(id,nom, Prenom,Heures_travail,salaire);
         this.responsabilite=responsabilite;
         this.numero_bureau=numero_bureau;
     }

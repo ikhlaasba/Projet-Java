@@ -8,29 +8,7 @@ import java.util.List;
 
 public class DAL {
 
-    public static void main(String[] args) {
-        try {
-            // Check if the database connection is successful
-            if (DBConnection.connect() != null) {
-                System.out.println("Database connection successful!");
-                
-                // Fetch all rooms and pass them to the frontend
-                List<Chambre> chambres = selectAllChambres();
-                
-                // You can print the list or pass it to the frontend (e.g., JavaFX)
-                for (Chambre chambre : chambres) {
-                    System.out.println(chambre);  // This is just for testing, can be removed for production
-                }
-                System.out.println(updateResident(1, "bonne sante"));
-                System.out.println(removeResident(1));
-                System.out.println(addResident(1,"flen","fleni",LocalDate.parse("2024-12-16"),"bonne sante"));
-            }
-        } catch (Exception e) {
-            System.out.println("Database connection failed!");
-            e.printStackTrace();
-        }
-    }
-
+    
     //********************SELECT ALL Chambres******************* */
     
     public static List<Chambre> selectAllChambres() {
@@ -132,6 +110,7 @@ public static boolean removeResident(int idResident) {
     }
 }
 /********************add RESIDENTS******************** */
+
 public static boolean addResident(int id_resident, String nom, String prenom, LocalDate date_naissance, String dossier_medical) {
     String sql = "INSERT INTO resident (id_resident, nom, prenom, date_naissance, dossier_medical) VALUES (?, ?, ?, ?, ?)";
 
@@ -153,6 +132,383 @@ public static boolean addResident(int id_resident, String nom, String prenom, Lo
         return false;
     }
 }
+ /********************ADD CHAMBRE******************** */
 
+public static boolean addChambre(int numero, String type, String statut) {
+    String sql = "INSERT INTO chambre (numero, type, statut) VALUES (?, ?, ?)";
+    boolean isAdded = false;
+
+    try (Connection conn = DBConnection.connect();
+         PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+        pstmt.setInt(1, numero);                    
+        pstmt.setString(2, type);                
+        pstmt.setString(3, statut);        
+
+        int rowsAffected = pstmt.executeUpdate();   
+        isAdded = (rowsAffected > 0);               
+
+    } catch (Exception e) {
+        System.out.println("Error occurred while adding the chambre!");
+        e.printStackTrace();
+    }
+
+    return isAdded;
+}
+
+/********************ADD PERSONNEL ADMINISTRATIF******************** */
+
+public static boolean addPersonnelAdministratif(int id, String nom, String prenom, double salaire, int horaireDeTravail, String responsabilite, int numeroBureau) {
+    String sql = "INSERT INTO personnel_administratif (id, nom, prenom, salaire, horaire_de_travail, responsabilite, numero_bureau) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    boolean isAdded = false;
+
+    try (Connection conn = DBConnection.connect();
+         PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+        pstmt.setInt(1, id);
+        pstmt.setString(2, nom);                    
+        pstmt.setString(3, prenom);                
+        pstmt.setDouble(4, salaire);        
+        pstmt.setInt(5, horaireDeTravail);
+        pstmt.setString(6, responsabilite);
+        pstmt.setInt(7, numeroBureau);
+
+        int rowsAffected = pstmt.executeUpdate();   
+        isAdded = (rowsAffected > 0);               
+
+    } catch (Exception e) {
+        System.out.println("Error occurred while adding the personnel administratif!");
+        e.printStackTrace();
+    }
+
+    return isAdded;
+}
+
+/********************ADD PERSONNEL MENAGE******************** */
+
+public static boolean addPersonnelMenage(int id, String nom, String prenom, double  salaire, int horaireDeTravail, String tache) {
+    String sql = "INSERT INTO personnel_menage (id, nom, prenom, salaire, horaire_de_travail, tache) VALUES (?, ?, ?, ?, ?, ?)";
+    boolean isAdded = false;
+
+    try (Connection conn = DBConnection.connect();
+         PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+        pstmt.setInt(1, id);
+        pstmt.setString(2, nom);                    
+        pstmt.setString(3, prenom);                
+        pstmt.setDouble(4, salaire);        
+        pstmt.setInt(5, horaireDeTravail);
+        pstmt.setString(6, tache);
+
+        int rowsAffected = pstmt.executeUpdate();   
+        isAdded = (rowsAffected > 0);               
+
+    } catch (Exception e) {
+        System.out.println("Error occurred while adding the personnel menage!");
+        e.printStackTrace();
+    }
+
+    return isAdded;
+}
+
+/********************ADD PERSONNEL SANTE******************** */
+
+public static boolean addPersonnelSante(int id, String nom, String prenom, double salaire, int horaireDeTravail, String specialite) {
+    String sql = "INSERT INTO personnel_sante (id, nom, prenom, salaire, horaire_de_travail, specialite) VALUES (?, ?, ?, ?, ?, ?)";
+    boolean isAdded = false;
+
+    try (Connection conn = DBConnection.connect();
+         PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+        pstmt.setInt(1, id);
+        pstmt.setString(2, nom);                    
+        pstmt.setString(3, prenom);                
+        pstmt.setDouble(4, salaire);        
+        pstmt.setInt(5, horaireDeTravail);
+        pstmt.setString(6, specialite);
+
+        int rowsAffected = pstmt.executeUpdate();   
+        isAdded = (rowsAffected > 0);               
+
+    } catch (Exception e) {
+        System.out.println("Error occurred while adding the personnel sante!");
+        e.printStackTrace();
+    }
+
+    return isAdded;
+}
+
+/********************ADD SERVICE******************** */
+
+public static boolean addService(String service, int duree) {
+    String sql = "INSERT INTO service (service, duree) VALUES (?, ?)";
+    boolean isAdded = false;
+
+    try (Connection conn = DBConnection.connect();
+         PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+        pstmt.setString(1, service);                    
+        pstmt.setInt(2, duree);        
+
+        int rowsAffected = pstmt.executeUpdate();   
+        isAdded = (rowsAffected > 0);               
+
+    } catch (Exception e) {
+        System.out.println("Error occurred while adding the service!");
+        e.printStackTrace();
+    }
+
+    return isAdded;
+}
+
+/********************REMOVE CHAMBRE**************************** */
+
+public static boolean removeChambre(int numero) {
+    String sql = "DELETE FROM chambre WHERE numero = ?";
+
+    try (Connection conn = DBConnection.connect();
+         PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+        pstmt.setInt(1, numero); 
+        int affectedRows = pstmt.executeUpdate();
+
+        return affectedRows > 0; 
+
+    } catch (Exception e) {
+        System.out.println("Error occurred while removing the chambre!");
+        e.printStackTrace();
+        return false; 
+    }
+}
+/********************REMOVE PERSONNEL ADMINISTRATIF**************************** */
+
+public static boolean removePersonnelAdministratif(int id) {
+    String sql = "DELETE FROM personnel_administratif WHERE id = ?";
+
+    try (Connection conn = DBConnection.connect();
+         PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+        pstmt.setInt(1, id); 
+        int affectedRows = pstmt.executeUpdate();
+
+        return affectedRows > 0; 
+
+    } catch (Exception e) {
+        System.out.println("Error occurred while removing the personnel administratif!");
+        e.printStackTrace();
+        return false; 
+    }
+}
+
+
+
+/********************REMOVE PERSONNEL MENAGE**************************** */
+
+
+public static boolean removePersonnelMenage(int id) {
+    String sql = "DELETE FROM personnel_menage WHERE id = ?";
+
+    try (Connection conn = DBConnection.connect();
+         PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+        pstmt.setInt(1, id); 
+        int affectedRows = pstmt.executeUpdate();
+
+        return affectedRows > 0; 
+
+    } catch (Exception e) {
+        System.out.println("Error occurred while removing the personnel menage!");
+        e.printStackTrace();
+        return false; 
+    }
+}
+
+
+/********************REMOVE PERSONNEL SANTE**************************** */
+
+public static boolean removePersonnelSante(int id) {
+    String sql = "DELETE FROM personnel_sante WHERE id = ?";
+
+    try (Connection conn = DBConnection.connect();
+         PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+        pstmt.setInt(1, id); 
+        int affectedRows = pstmt.executeUpdate();
+
+        return affectedRows > 0; 
+
+    } catch (Exception e) {
+        System.out.println("Error occurred while removing the personnel sante!");
+        e.printStackTrace();
+        return false; 
+    }
+}
+
+
+/********************REMOVE SERVICE**************************** */
+
+
+public static boolean removeService(String serviceName) {
+    String sql = "DELETE FROM service WHERE service = ?";
+
+    try (Connection conn = DBConnection.connect();
+         PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+        pstmt.setString(1, serviceName); 
+        int affectedRows = pstmt.executeUpdate();
+
+        return affectedRows > 0; 
+
+    } catch (Exception e) {
+        System.out.println("Error occurred while removing the service!");
+        e.printStackTrace();
+        return false; 
+    }
+}
+
+/*******************SELECT ALL PERSONNEL ADMINISTRATIF*****************************/
+
+public static List<Administratif> selectAllPersonnelAdministratif() {
+    String nomTab = "personnel_administratif"; 
+    String sql = "SELECT * FROM " + nomTab;
+
+    List<Administratif> personnel = new ArrayList<>();
+
+    try (Connection conn = DBConnection.connect();
+         Statement stmt = conn.createStatement();
+         ResultSet rs = stmt.executeQuery(sql)) {
+    
+        while (rs.next()) {
+            int id = rs.getInt("id");
+            String nom = rs.getString("nom");
+            String prenom = rs.getString("prenom");
+            double salaire = rs.getDouble("salaire");
+            int horaireDeTravail = rs.getInt("horaire_de_travail");
+            String responsabilite = rs.getString("responsabilite");
+            int numeroBureau = rs.getInt("numero_bureau");
+
+            personnel.add(new Administratif(id,nom,prenom,horaireDeTravail,responsabilite,numeroBureau,salaire));
+        }
+
+    } catch (Exception e) {
+        System.out.println("Error occurred while fetching personnel administratif data!");
+        e.printStackTrace();
+    }
+
+    return personnel;  
+}
+
+/*******************SELECT ALL PERSONNEL MENAGE*****************************/
+
+
+public static List<Menage> selectAllPersonnelMenage() {
+    String nomTab = "personnel_menage"; 
+    String sql = "SELECT * FROM " + nomTab;
+
+    List<Menage> personnel = new ArrayList<>();
+
+    try (Connection conn = DBConnection.connect();
+         Statement stmt = conn.createStatement();
+         ResultSet rs = stmt.executeQuery(sql)) {
+    
+        while (rs.next()) {
+            int id = rs.getInt("id");
+            String nom = rs.getString("nom");
+            String prenom = rs.getString("prenom");
+            Double salaire = rs.getDouble("salaire");
+            int horaireDeTravail = rs.getInt("horaire_de_travail");
+            String tache = rs.getString("tache");
+
+            personnel.add(new Menage(id,nom,prenom,horaireDeTravail,tache,salaire));
+        }
+
+    } catch (Exception e) {
+        System.out.println("Error occurred while fetching personnel menage data!");
+        e.printStackTrace();
+    }
+
+    return personnel;  
+}
+
+
+/*******************SELECT ALL PERSONNEL SANTE*****************************/
+
+public static List<Sante> selectAllPersonnelSante() {
+    String nomTab = "personnel_sante"; 
+    String sql = "SELECT * FROM " + nomTab;
+
+    List<Sante> personnel = new ArrayList<>();
+
+    try (Connection conn = DBConnection.connect();
+         Statement stmt = conn.createStatement();
+         ResultSet rs = stmt.executeQuery(sql)) {
+    
+        while (rs.next()) {
+            int id = rs.getInt("id");
+            String nom = rs.getString("nom");
+            String prenom = rs.getString("prenom");
+            Double salaire = rs.getDouble("salaire");
+            int horaireDeTravail = rs.getInt("horaire_de_travail");
+            String specialite = rs.getString("specialite");
+
+            personnel.add(new Sante(id,nom,prenom,horaireDeTravail,specialite,salaire));
+        }
+
+    } catch (Exception e) {
+        System.out.println("Error occurred while fetching personnel sante data!");
+        e.printStackTrace();
+    }
+
+    return personnel;  
+}
+
+/*******************SELECT ALL SERVICE****************************/
+
+public static List<Service> selectAllServices() {
+    String nomTab = "service"; 
+    String sql = "SELECT * FROM " + nomTab;
+
+    List<Service> services = new ArrayList<>();
+
+    try (Connection conn = DBConnection.connect();
+         Statement stmt = conn.createStatement();
+         ResultSet rs = stmt.executeQuery(sql)) {
+    
+        while (rs.next()) {
+            String service = rs.getString("service");
+            int duree = rs.getInt("duree");
+
+            services.add(new Service(service, duree));
+        }
+
+    } catch (Exception e) {
+        System.out.println("Error occurred while fetching service data!");
+        e.printStackTrace();
+    }
+
+    return services;  
+}
+
+
+public static void main(String[] args) {
+        try {
+            // Check if the database connection is successful
+            if (DBConnection.connect() != null) {
+                System.out.println("Database connection successful!");
+                
+                // Fetch all rooms and pass them to the frontend
+                List<Resident> y = selectAllResidents();
+                
+                // You can print the list or pass it to the frontend (e.g., JavaFX)
+                for (Resident x : y) {
+                    System.out.println(x);  // This is just for testing, can be removed for production
+                }
+                
+            }
+        } catch (Exception e) {
+            System.out.println("Database connection failed!");
+            e.printStackTrace();
+        }
+    }
 
 }

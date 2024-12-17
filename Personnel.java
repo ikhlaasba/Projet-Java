@@ -2,13 +2,14 @@ public class Personnel{
     private int id;
     private String nom;
     private String prenom;
-    private float salaire;
+    private double salaire;
     private int Heures_travail;
-    public Personnel(int id,String nom,String Prenom,int Heures_travail){
+    public Personnel(int id,String nom,String Prenom,int Heures_travail,double salaire){
         this.id=id;
         this.nom=nom;
-        this.prenom=prenom;
+        this.prenom=Prenom;
         this.Heures_travail=Heures_travail;
+        this.salaire=salaire;
     }
     public void setId(int id){
         this.id=id;
@@ -22,7 +23,7 @@ public class Personnel{
     public void setHeures_travail(int heures){
         Heures_travail=heures;
     }
-    public void setSalaire(float salaire){
+    public void setSalaire(double salaire){
         this.salaire=salaire;
     }
     public int getId(){
@@ -37,7 +38,7 @@ public class Personnel{
     public int getHeure_travail(){
         return this.Heures_travail;
     }
-    public float getSalaire(){
+    public double getSalaire(){
         return this.salaire;
     }
     public String toString(){

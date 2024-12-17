@@ -2,27 +2,21 @@ enum Specialite{
     generaliste,kinesitherapeute,nutritionniste,cardiologue,orthopediste;
 }
 public class Sante extends Personnel{
-    private Specialite specialite;
-    private String grade;
-    public Sante(int id,String nom,String Prenom,int Heures_travail,Specialite specialite,String grade){
-        super(id,nom,Prenom,Heures_travail);
+    private String specialite;
+    public Sante(int id,String nom,String Prenom,int Heures_travail,String specialite,double salaire){
+        super(id,nom,Prenom,Heures_travail,salaire);
         this.specialite=specialite;
-        this.grade=grade;
+
     }
-    public void setSpecialite(Specialite specialite){
+    public void setSpecialite(String specialite){
         this.specialite=specialite;
     }
-    public Specialite getSpecialite(){
+    public String getSpecialite(){
         return this.specialite;
-    }
-    public void setGrade(String grade){
-    }
-    public String getGrade(){
-        return this.grade;
     }
 
     public String toString(){
-        return super.toString()+" Spécialité: "+this.specialite+" Grade: "+this.grade+"\n";
+        return super.toString()+" Spécialité: "+this.specialite+"\n";
     }
 }
 
