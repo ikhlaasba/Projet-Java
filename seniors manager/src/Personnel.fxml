@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="PersonnelController" 
+            prefHeight="462" prefWidth="472" style="-fx-background-color: #82a1cd;">
+    <VBox spacing="20" alignment="CENTER" 
+          AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" 
+          AnchorPane.topAnchor="20" AnchorPane.bottomAnchor="20">
+        
+        <!-- Title Label -->
+        <Label text="Personnel Management" alignment="CENTER" 
+               style="-fx-font-size: 22; -fx-text-fill: #110b61; -fx-font-weight: bold;"/>
+
+        <!-- MENAGE Section -->
+        <VBox spacing="10" alignment="CENTER">
+            <Label text="Menage" style="-fx-font-size: 18; -fx-text-fill: #110b61;"/>
+            <HBox spacing="10" alignment="CENTER">
+                <Button text="Add" onAction="#handleAddMenage" 
+                        style="-fx-background-color: white; -fx-text-fill: #5381E6; -fx-font-weight: bold;"/>
+                <Button text="Update" onAction="#handleUpdateMenage" 
+                        style="-fx-background-color: white; -fx-text-fill: #5381E6; -fx-font-weight: bold;"/>
+                <Button text="Delete" onAction="#handleDeleteMenage" 
+                        style="-fx-background-color: white; -fx-text-fill: #5381E6; -fx-font-weight: bold;"/>
+                <Button text="Show" onAction="#handleShowMenage" 
+                        style="-fx-background-color: white; -fx-text-fill: #5381E6; -fx-font-weight: bold;"/>
+            </HBox>
+        </VBox>
+
+        <!-- ADMINISTRATIF Section -->
+        <VBox spacing="10" alignment="CENTER">
+            <Label text="Administratif" style="-fx-font-size: 18; -fx-text-fill: #110b61;"/>
+            <HBox spacing="10" alignment="CENTER">
+                <Button text="Add" onAction="#handleAddAdministratif" 
+                        style="-fx-background-color: white; -fx-text-fill: #5381E6; -fx-font-weight: bold;"/>
+                <Button text="Update" onAction="#handleUpdateAdministratif" 
+                        style="-fx-background-color: white; -fx-text-fill: #5381E6; -fx-font-weight: bold;"/>
+                <Button text="Delete" onAction="#handleDeleteAdministratif" 
+                        style="-fx-background-color: white; -fx-text-fill: #5381E6; -fx-font-weight: bold;"/>
+                <Button text="Show" onAction="#handleShowAdministratif" 
+                        style="-fx-background-color: white; -fx-text-fill: #5381E6; -fx-font-weight: bold;"/>
+            </HBox>
+        </VBox>
+
+        <!-- SANTE Section -->
+        <VBox spacing="10" alignment="CENTER">
+            <Label text="Sante" style="-fx-font-size: 18; -fx-text-fill: #110b61;"/>
+            <HBox spacing="10" alignment="CENTER">
+                <Button text="Add" onAction="#handleAddSante" 
+                        style="-fx-background-color: white; -fx-text-fill: #5381E6; -fx-font-weight: bold;"/>
+                <Button text="Update" onAction="#handleUpdateSante" 
+                        style="-fx-background-color: white; -fx-text-fill: #5381E6; -fx-font-weight: bold;"/>
+                <Button text="Delete" onAction="#handleDeleteSante" 
+                        style="-fx-background-color: white; -fx-text-fill: #5381E6; -fx-font-weight: bold;"/>
+                <Button text="Show" onAction="#handleShowSante" 
+                        style="-fx-background-color: white; -fx-text-fill: #5381E6; -fx-font-weight: bold;"/>
+            </HBox>
+        </VBox>
+
+    </VBox>
+</AnchorPane>

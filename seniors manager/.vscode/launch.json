@@ -1,4 +1,3 @@
-
 {
     // Use IntelliSense to learn about possible attributes.
     // Hover to view descriptions of existing attributes.
@@ -13,11 +12,11 @@
         },
         {
             "type": "java",
-            "name": "Main1",
+            "name": "App",
             "request": "launch",
-            "mainClass": "Main1",
-            "projectName": "manager_cada0df5",
-            "vmArgs": "--module-path \"C:\\Users\\Sourour\\Downloads\\openjfx-23.0.1_windows-x64_bin-sdk.zip\\javafx-sdk-23.0.1\\lib\" --add-modules javafx.controls,javafx.fxml"
+            "mainClass": "App",
+            "projectName": "seniors manager_61378718",
+            "vmArgs": "--module-path \"C:\\javafx-sdk-23.0.1\\lib\" --add-modules javafx.controls,javafx.fxml"
         }
     ]
 }
