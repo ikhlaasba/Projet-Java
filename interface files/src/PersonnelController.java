@@ -1,5 +1,8 @@
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
+import javafx.scene.control.*;
+import javafx.stage.Stage;
+import javafx.fxml.FXMLLoader;
+import java.io.IOException;
 
 public class PersonnelController {
 
@@ -12,10 +15,25 @@ public class PersonnelController {
         alert.show();
     }
 
+
     // MENAGE Methods
     @FXML
     public void handleAddMenage() {
-        showAlert("Menage", "Add Menage clicked");
+        try {
+            // Load the AddResident FXML
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("AddResident.fxml"));
+            Stage stage = new Stage();
+            stage.setScene(new javafx.scene.Scene(loader.load()));
+
+            // Optionally set the title of the new window
+            stage.setTitle("Add Resident");
+
+            // Show the AddResident scene
+            stage.show();
+        } catch (IOException e) {
+            showAlert("Error", "Failed to load Add Resident interface.");
+            e.printStackTrace();
+        }
     }
 
     @FXML

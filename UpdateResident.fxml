@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="UpdateResidentController" 
+            prefHeight="462" prefWidth="472" style="-fx-background-color: #82a1cd;">
+    <VBox spacing="20" alignment="CENTER" 
+          AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" 
+          AnchorPane.topAnchor="20" AnchorPane.bottomAnchor="20">
+
+        <!-- Title Label -->
+        <Label text="UPDATE RESIDENT" alignment="CENTER" 
+               style="-fx-font-size: 25; -fx-text-fill: #110b61; -fx-font-weight: bold;"/>
+
+        <!-- Resident ID -->
+        <VBox spacing="10" alignment="CENTER">
+            <Label text="Resident ID" style="-fx-font-size: 18; -fx-text-fill: #110b61;"/>
+            <TextField fx:id="idResident" promptText="Enter Resident ID" style="-fx-font-size: 16;"/>
+        </VBox>
+
+        <!-- Name -->
+        <VBox spacing="10" alignment="CENTER">
+            <Label text="Name" style="-fx-font-size: 18; -fx-text-fill: #110b61;"/>
+            <TextField fx:id="nom" promptText="Enter Name" style="-fx-font-size: 16;"/>
+        </VBox>
+
+        <!-- First Name -->
+        <VBox spacing="10" alignment="CENTER">
+            <Label text="First Name" style="-fx-font-size: 18; -fx-text-fill: #110b61;"/>
+            <TextField fx:id="prenom" promptText="Enter First Name" style="-fx-font-size: 16;"/>
+        </VBox>
+
+        <!-- Date of Birth -->
+        <VBox spacing="10" alignment="CENTER">
+            <Label text="Date of Birth" style="-fx-font-size: 18; -fx-text-fill: #110b61;"/>
+            <DatePicker fx:id="dateNaissance" style="-fx-font-size: 16;"/>
+        </VBox>
+
+        <!-- Medical File -->
+        <VBox spacing="10" alignment="CENTER">
+            <Label text="Medical File" style="-fx-font-size: 18; -fx-text-fill: #110b61;"/>
+            <TextField fx:id="dossierMedical" promptText="Enter Medical File" style="-fx-font-size: 16;"/>
+        </VBox>
+
+        <!-- Update Resident Button -->
+        <VBox spacing="10" alignment="CENTER">
+            <Button fx:id="updateButton" text="Update Resident" onAction="#handleUpdateResident" 
+                    style="-fx-background-color: white; -fx-text-fill: #5381E6; -fx-font-weight: bold;"/>
+        </VBox>
+
+        <!-- Back to Main Menu Button -->
+        <VBox spacing="10" alignment="CENTER">
+            <Button text="Back to Main Menu" onAction="#goToMainMenu" 
+                    style="-fx-background-color: white; -fx-text-fill: #5381E6; -fx-font-weight: bold;"/>
+        </VBox>
+    </VBox>
+</AnchorPane>
