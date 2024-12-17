@@ -489,6 +489,113 @@ public static List<Service> selectAllServices() {
     return services;  
 }
 
+ /*******************************UPDATE CHAMBRE******************************** */
+
+public static boolean updateChambre(int numero, String newStatut) {
+    String sql = "UPDATE chambre SET statut = ? WHERE numero = ?";
+
+    try (Connection conn = DBConnection.connect();
+         PreparedStatement pstmt = conn.prepareStatement(sql)) {
+        
+        pstmt.setString(1, newStatut); 
+        pstmt.setInt(2, numero);          
+        int lignes = pstmt.executeUpdate();
+        
+        return lignes > 0;
+
+    } catch (Exception e) {
+        System.out.println("Error occurred while updating chambre statut!");
+        e.printStackTrace();
+        return false;
+    }
+}
+ /*******************************UPDATE PERSONNEL ADMINISTRATIF******************************** */
+
+public static boolean updatePersonnelAdministratif(int id, double newSalaire) {
+    String sql = "UPDATE personnel_administratif SET salaire = ? WHERE id = ?";
+
+    try (Connection conn = DBConnection.connect();
+         PreparedStatement pstmt = conn.prepareStatement(sql)) {
+        
+        pstmt.setDouble(1, newSalaire); 
+        pstmt.setInt(2, id);          
+        int lignes = pstmt.executeUpdate();
+        
+        return lignes > 0;
+
+    } catch (Exception e) {
+        System.out.println("Error occurred while updating personnel administratif salaire!");
+        e.printStackTrace();
+        return false;
+    }
+}
+
+
+ /*******************************UPDATE PERSONNEL MENAGE******************************** */
+
+public static boolean updatePersonnelMenage(int id, String newTache) {
+    String sql = "UPDATE personnel_menage SET tache = ? WHERE id = ?";
+
+    try (Connection conn = DBConnection.connect();
+         PreparedStatement pstmt = conn.prepareStatement(sql)) {
+        
+        pstmt.setString(1, newTache); 
+        pstmt.setInt(2, id);          
+        int lignes = pstmt.executeUpdate();
+        
+        return lignes > 0;
+
+    } catch (Exception e) {
+        System.out.println("Error occurred while updating personnel menage tache!");
+        e.printStackTrace();
+        return false;
+    }
+}
+
+ /*******************************UPDATE PERSONNEL SANTE******************************** */
+
+public static boolean updatePersonnelSante(int id, double newSalaire) {
+    String sql = "UPDATE personnel_sante SET salaire = ? WHERE id = ?";
+
+    try (Connection conn = DBConnection.connect();
+         PreparedStatement pstmt = conn.prepareStatement(sql)) {
+        
+        pstmt.setDouble(1, newSalaire); 
+        pstmt.setInt(2, id);          
+        int lignes = pstmt.executeUpdate();
+        
+        return lignes > 0;
+
+    } catch (Exception e) {
+        System.out.println("Error occurred while updating personnel sante specialite!");
+        e.printStackTrace();
+        return false;
+    }
+}
+
+
+ /*******************************UPDATE SERVICE******************************** */
+
+
+public static boolean updateService(String serviceName, int newDuree) {
+    String sql = "UPDATE service SET duree = ? WHERE service = ?";
+
+    try (Connection conn = DBConnection.connect();
+         PreparedStatement pstmt = conn.prepareStatement(sql)) {
+        
+        pstmt.setInt(1, newDuree); 
+        pstmt.setString(2, serviceName);          
+        int lignes = pstmt.executeUpdate();
+        
+        return lignes > 0;
+
+    } catch (Exception e) {
+        System.out.println("Error occurred while updating service duree!");
+        e.printStackTrace();
+        return false;
+    }
+}
+
 
 public static void main(String[] args) {
         try {
@@ -500,9 +607,10 @@ public static void main(String[] args) {
                 List<Resident> y = selectAllResidents();
                 
                 // You can print the list or pass it to the frontend (e.g., JavaFX)
-                for (Resident x : y) {
+                /*for (Resident x : y) {
                     System.out.println(x);  // This is just for testing, can be removed for production
-                }
+                }*/
+               System.out.println(updatePersonnelMenage(1,"neetoiage saale d'acceuil"));
                 
             }
         } catch (Exception e) {
