@@ -11,54 +11,50 @@ public class AddResidentController {
     @FXML private TextField prenom;
     @FXML private DatePicker dateNaissance;
     @FXML private TextField dossierMedical;
-    @FXML private Button addButton;
+    @FXML private Button submitButton;
+    @FXML private Button backToMenuButton;
 
-    // Utility method for showing alerts
-    private void showAlert(String title, String content) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    private void showAlert(Alert.AlertType alertType, String title, String content) {
+        Alert alert = new Alert(alertType);
         alert.setTitle(title);
         alert.setHeaderText(null);
         alert.setContentText(content);
-        alert.show();
+        alert.showAndWait();
     }
 
-    // Handle the addition of a resident
     @FXML
     private void handleAddResident() {
         try {
-            // Check if any required field is empty
             if (idResident.getText().isEmpty() || nom.getText().isEmpty() || prenom.getText().isEmpty() || 
                 dateNaissance.getValue() == null || dossierMedical.getText().isEmpty()) {
-                showAlert("Input Error", "Please fill in all the fields.");
+                showAlert(Alert.AlertType.ERROR, "Input Error", "Please fill in all the fields.");
                 return;
             }
 
-            // Parsing the input values
             int id = Integer.parseInt(idResident.getText());
             String name = nom.getText();
             String firstName = prenom.getText();
             LocalDate dateOfBirth = dateNaissance.getValue();
             String medicalFile = dossierMedical.getText();
 
-            // Attempt to add the resident
             boolean success = DAL.addResident(id, name, firstName, dateOfBirth, medicalFile);
 
             if (success) {
-                showAlert("Success", "Resident added successfully!");
+                showAlert(Alert.AlertType.INFORMATION, "Success", "Resident added successfully!");
             } else {
-                showAlert("Failure", "Failed to add resident.");
+                showAlert(Alert.AlertType.ERROR, "Failure", "Failed to add resident.");
             }
         } catch (NumberFormatException e) {
-            showAlert("Input Error", "Resident ID must be a valid number.");
+            showAlert(Alert.AlertType.ERROR, "Input Error", "Resident ID must be a valid number.");
         } catch (Exception e) {
-            showAlert("Error", "An unexpected error occurred: " + e.getMessage());
+            showAlert(Alert.AlertType.ERROR, "Error", "An unexpected error occurred: " + e.getMessage());
         }
     }
 
-    // Go back to the main menu (or any other scene)
-    public void goToMainMenu() {
+    @FXML
+    private void goToMainMenu() {
         try {
-            Stage stage = (Stage) addButton.getScene().getWindow();
+            Stage stage = (Stage) backToMenuButton.getScene().getWindow();
             App.setRoot(stage, "MainMenu");
         } catch (Exception e) {
             e.printStackTrace();

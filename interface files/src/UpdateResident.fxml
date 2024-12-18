@@ -3,17 +3,19 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="462.0" prefWidth="473.0" 
-            style="-fx-background-color: #82a1cd;" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AddResidentController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" 
+            prefHeight="462.0" prefWidth="473.0" 
+            style="-fx-background-color: #82a1cd;" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="UpdateResidentController">
     <children>
         <!-- Title Label -->
-        <Label layoutX="140.0" layoutY="20.0" text="WHO'S NEW?" textFill="#110b61">
+        <Label layoutX="140.0" layoutY="20.0" text="UPDATE RESIDENT" textFill="#110b61">
             <font>
                 <Font name="Sylfaen" size="27.0" />
             </font>
         </Label>
-          <!-- Resident ID -->
+
+        <!-- Resident ID -->
         <TextField fx:id="idResident" layoutX="133.0" layoutY="70.0" prefHeight="35.0" prefWidth="208.0" promptText="Enter Resident ID"
                    style="-fx-border-color: transparent; -fx-border-width: 1; -fx-border-radius: 5; -fx-padding: 5; -fx-background-insets: 0, 0, 1, 2;">
             <font>
@@ -21,16 +23,16 @@
             </font>
         </TextField>
 
-        <!-- First Name -->
-        <TextField fx:id="prenom" layoutX="133.0" layoutY="140.0" prefHeight="35.0" prefWidth="208.0" promptText="Enter First Name"
+        <!-- Name -->
+        <TextField fx:id="nom" layoutX="133.0" layoutY="140.0" prefHeight="35.0" prefWidth="208.0" promptText="Enter Name"
                    style="-fx-border-color: transparent; -fx-border-width: 1; -fx-border-radius: 5; -fx-padding: 5; -fx-background-insets: 0, 0, 1, 2;">
             <font>
                 <Font name="System" size="16.0" />
             </font>
         </TextField>
 
-        <!-- Last Name -->
-        <TextField fx:id="nom" layoutX="133.0" layoutY="210.0" prefHeight="35.0" prefWidth="208.0" promptText="Enter Last Name"
+        <!-- First Name -->
+        <TextField fx:id="prenom" layoutX="133.0" layoutY="210.0" prefHeight="35.0" prefWidth="208.0" promptText="Enter First Name"
                    style="-fx-border-color: transparent; -fx-border-width: 1; -fx-border-radius: 5; -fx-padding: 5; -fx-background-insets: 0, 0, 1, 2;">
             <font>
                 <Font name="System" size="16.0" />
@@ -52,10 +54,10 @@
         <!-- Buttons in HBox -->
         <HBox layoutX="133.0" layoutY="410.0" spacing="20.0" alignment="CENTER">
             <children>
-                <!-- Add Resident Button -->
-                <Button fx:id="submitButton" prefHeight="46.0" prefWidth="100.0" text="SUBMIT"
+                <!-- Update Resident Button -->
+                <Button fx:id="updateButton" prefHeight="46.0" prefWidth="100.0" text="UPDATE"
                         style="-fx-background-color: white; -fx-text-fill: #5381E6; -fx-font-size: 16; -fx-font-family: Times New Roman; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-width: 2;"
-                        onAction="#handleAddResident" />
+                        onAction="#handleUpdateResident" />
                 <!-- Back to Main Menu Button -->
                 <Button fx:id="backToMenuButton" prefHeight="46.0" prefWidth="100.0" text="BACK"
                         style="-fx-background-color: white; -fx-text-fill: #5381E6; -fx-font-size: 16; -fx-font-family: Times New Roman; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-width: 2;"
