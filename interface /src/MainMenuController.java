@@ -11,7 +11,7 @@ public class MainMenuController {
     @FXML private Button roomsButton;
     @FXML private Button ResidentButton;
 
-    // This method will set the welcome message with the username
+    // set the welcome message with the username
     public void setWelcomeMessage(String username) {
         welcomeLabel.setText("Welcome, " + username);
     }
@@ -40,7 +40,7 @@ public class MainMenuController {
     public void goToRooms() {
         try {
             Stage stage = (Stage) roomsButton.getScene().getWindow();
-            App.setRoot(stage, "Rooms");
+            App.setRoot(stage, "Chambre");
         } catch (Exception e) {
             e.printStackTrace();
         }

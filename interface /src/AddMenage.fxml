@@ -3,48 +3,57 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" 
-            prefHeight="462.0" prefWidth="473.0" 
-            style="-fx-background-color: #82a1cd;" xmlns:fx="http://javafx.com/fxml/1" 
-            fx:controller="UpdateResidentController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="462.0" prefWidth="473.0" 
+            style="-fx-background-color: #82a1cd;" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AddMenageController">
     <children>
         <!-- Title Label -->
-        <Label layoutX="140.0" layoutY="20.0" text="UPDATE RESIDENT" textFill="#110b61">
+        <Label layoutX="140.0" layoutY="20.0" text="WHO'S NEW?" textFill="#110b61">
             <font>
                 <Font name="Sylfaen" size="27.0" />
             </font>
         </Label>
-
-        <!-- Resident ID -->
-        <TextField fx:id="idResident" layoutX="133.0" layoutY="70.0" prefHeight="35.0" prefWidth="208.0" promptText="Enter Resident ID"
+        <!-- ID -->
+        <TextField fx:id="id" layoutX="133.0" layoutY="70.0" prefHeight="35.0" prefWidth="208.0" promptText="Enter ID"
                    style="-fx-border-color: transparent; -fx-border-width: 1; -fx-border-radius: 5; -fx-padding: 5; -fx-background-insets: 0, 0, 1, 2;">
             <font>
                 <Font name="System" size="16.0" />
             </font>
         </TextField>
 
-        <!-- Name -->
-        <TextField fx:id="nom" layoutX="133.0" layoutY="140.0" prefHeight="35.0" prefWidth="208.0" promptText="Enter Name"
+        <!-- Nom -->
+        <TextField fx:id="nom" layoutX="133.0" layoutY="110.0" prefHeight="35.0" prefWidth="208.0" promptText="Enter Nom"
                    style="-fx-border-color: transparent; -fx-border-width: 1; -fx-border-radius: 5; -fx-padding: 5; -fx-background-insets: 0, 0, 1, 2;">
             <font>
                 <Font name="System" size="16.0" />
             </font>
         </TextField>
 
-        <!-- First Name -->
-        <TextField fx:id="prenom" layoutX="133.0" layoutY="210.0" prefHeight="35.0" prefWidth="208.0" promptText="Enter First Name"
+        <!-- Prenom -->
+        <TextField fx:id="prenom" layoutX="133.0" layoutY="150.0" prefHeight="35.0" prefWidth="208.0" promptText="Enter Prenom"
                    style="-fx-border-color: transparent; -fx-border-width: 1; -fx-border-radius: 5; -fx-padding: 5; -fx-background-insets: 0, 0, 1, 2;">
             <font>
                 <Font name="System" size="16.0" />
             </font>
         </TextField>
 
-        <!-- Date of Birth -->
-        <DatePicker fx:id="dateNaissance" layoutX="133.0" layoutY="280.0" prefHeight="35.0" prefWidth="208.0"
-                    style="-fx-border-color: transparent; -fx-border-width: 1; -fx-border-radius: 5; -fx-padding: 5; -fx-background-insets: 0, 0, 1, 2;" />
+        <!-- Salaire -->
+        <TextField fx:id="salaire" layoutX="133.0" layoutY="190.0" prefHeight="35.0" prefWidth="208.0" promptText="Enter Salaire"
+                   style="-fx-border-color: transparent; -fx-border-width: 1; -fx-border-radius: 5; -fx-padding: 5; -fx-background-insets: 0, 0, 1, 2;">
+            <font>
+                <Font name="System" size="16.0" />
+            </font>
+        </TextField>
 
-        <!-- Medical File -->
-        <TextField fx:id="dossierMedical" layoutX="133.0" layoutY="350.0" prefHeight="35.0" prefWidth="208.0" promptText="Enter Medical File"
+        <!-- Horaire de Travail -->
+        <TextField fx:id="horaireDeTravail" layoutX="133.0" layoutY="230.0" prefHeight="35.0" prefWidth="208.0" promptText="Enter Horaire de Travail"
+                   style="-fx-border-color: transparent; -fx-border-width: 1; -fx-border-radius: 5; -fx-padding: 5; -fx-background-insets: 0, 0, 1, 2;">
+            <font>
+                <Font name="System" size="16.0" />
+            </font>
+        </TextField>
+
+        <!-- Tache -->
+        <TextField fx:id="tache" layoutX="133.0" layoutY="270.0" prefHeight="35.0" prefWidth="208.0" promptText="Enter Tache"
                    style="-fx-border-color: transparent; -fx-border-width: 1; -fx-border-radius: 5; -fx-padding: 5; -fx-background-insets: 0, 0, 1, 2;">
             <font>
                 <Font name="System" size="16.0" />
@@ -52,12 +61,12 @@
         </TextField>
 
         <!-- Buttons in HBox -->
-        <HBox layoutX="133.0" layoutY="410.0" spacing="20.0" alignment="CENTER">
+        <HBox layoutX="133.0" layoutY="320.0" spacing="20.0" alignment="CENTER">
             <children>
-                <!-- Update Resident Button -->
-                <Button fx:id="updateButton" prefHeight="46.0" prefWidth="100.0" text="UPDATE"
+                <!-- Submit Button -->
+                <Button fx:id="submitButton" prefHeight="46.0" prefWidth="100.0" text="SUBMIT"
                         style="-fx-background-color: white; -fx-text-fill: #5381E6; -fx-font-size: 16; -fx-font-family: Times New Roman; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-width: 2;"
-                        onAction="#handleUpdateResident" />
+                        onAction="#addMenage" />
                 <!-- Back to Main Menu Button -->
                 <Button fx:id="backToMenuButton" prefHeight="46.0" prefWidth="100.0" text="BACK"
                         style="-fx-background-color: white; -fx-text-fill: #5381E6; -fx-font-size: 16; -fx-font-family: Times New Roman; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-width: 2;"

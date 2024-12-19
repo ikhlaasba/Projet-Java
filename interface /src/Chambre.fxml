@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="462.0" prefWidth="472.0" style="-fx-background-color: #82a1cd;" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ChambreController">
+    <VBox spacing="20" alignment="CENTER" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="50" AnchorPane.bottomAnchor="50">
+        <!-- Title Label -->
+        <Label text="Chambre Management" alignment="CENTER" 
+               style="-fx-font-size: 22; -fx-text-fill: #110b61; -fx-font-weight: bold;" />
+        
+        <!-- Add Button -->
+        <Button fx:id="addChambreButton" prefHeight="46.0" prefWidth="200.0" text="Add" onAction="#addChambre"
+                style="-fx-background-color: white; -fx-text-fill: #5381E6; -fx-font-size: 16; -fx-font-family: Times New Roman; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-width: 2;" />
+        
+        <!-- Update Button -->
+        <Button fx:id="updateChambreButton" prefHeight="46.0" prefWidth="200.0" text="Update" onAction="#updateChambre"
+                style="-fx-background-color: white; -fx-text-fill: #5381E6; -fx-font-size: 16; -fx-font-family: Times New Roman; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-width: 2;" />
+        
+        <!-- Delete Button -->
+        <Button fx:id="deleteChambreButton" prefHeight="46.0" prefWidth="200.0" text="Delete" onAction="#deleteChambre"
+                style="-fx-background-color: white; -fx-text-fill: #5381E6; -fx-font-size: 16; -fx-font-family: Times New Roman; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-width: 2;" />
+        
+        <!-- Show Button -->
+        <Button fx:id="showChambreButton" prefHeight="46.0" prefWidth="200.0" text="Show" onAction="#showChambre"
+                style="-fx-background-color: white; -fx-text-fill: #5381E6; -fx-font-size: 16; -fx-font-family: Times New Roman; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-width: 2;" />
+    </VBox>
+</AnchorPane>

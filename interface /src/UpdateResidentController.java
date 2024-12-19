@@ -1,5 +1,3 @@
-import java.time.LocalDate;
-
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
@@ -7,11 +5,9 @@ import javafx.stage.Stage;
 public class UpdateResidentController {
 
     @FXML private TextField idResident;
-    @FXML private TextField nom;
-    @FXML private TextField prenom;
-    @FXML private DatePicker dateNaissance;
     @FXML private TextField dossierMedical;
     @FXML private Button updateButton;
+    @FXML private Button backToMenuButton;
 
     private void showAlert(String title, String content) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
@@ -24,18 +20,14 @@ public class UpdateResidentController {
     @FXML
     private void handleUpdateResident() {
         try {
-            if (idResident.getText().isEmpty() || nom.getText().isEmpty() || prenom.getText().isEmpty() || 
-                dateNaissance.getValue() == null || dossierMedical.getText().isEmpty()) {
+            if (idResident.getText().isEmpty() || dossierMedical.getText().isEmpty()) {
                 showAlert("Input Error", "Please fill in all the fields.");
                 return;
             }
 
             int id = Integer.parseInt(idResident.getText());
-            String name = nom.getText();
-            String firstName = prenom.getText();
             String medicalFile = dossierMedical.getText();
-            LocalDate dateOfBirth = dateNaissance.getValue();
-
+            
             boolean success = DAL.updateResident(id, medicalFile);
 
             if (success) {
@@ -50,9 +42,10 @@ public class UpdateResidentController {
         }
     }
 
-    public void goToMainMenu() {
+    @FXML
+    private void goToMainMenu() {
         try {
-            Stage stage = (Stage) updateButton.getScene().getWindow();
+            Stage stage = (Stage) backToMenuButton.getScene().getWindow();
             App.setRoot(stage, "MainMenu");
         } catch (Exception e) {
             e.printStackTrace();

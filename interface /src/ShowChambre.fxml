@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #82a1cd;" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ShowChambreController">
+    <children>
+        <!-- Title Label -->
+        <Label layoutX="200.0" layoutY="20.0" text="Show Chambres" textFill="#110b61">
+            <font>
+                <Font name="Sylfaen" size="27.0" />
+            </font>
+        </Label>
+        
+        <!-- Chambre Table -->
+        <TableView fx:id="chambreTable" layoutX="50.0" layoutY="70.0" prefHeight="300.0" prefWidth="500.0">
+            <columns>
+                <TableColumn fx:id="numeroColumn" prefWidth="150.0" text="Room Number" />
+                <TableColumn fx:id="typeColumn" prefWidth="150.0" text="Room Type" />
+                <TableColumn fx:id="statutColumn" prefWidth="200.0" text="Room Status" />
+            </columns>
+        </TableView>
+        
+        <!-- Back Button -->
+        <Button fx:id="backToMenuButton" layoutX="250.0" layoutY="380.0" prefHeight="46.0" prefWidth="100.0" text="BACK" 
+                style="-fx-background-color: white; -fx-text-fill: #5381E6; -fx-font-size: 16; -fx-font-family: Times New Roman; 
+                       -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-width: 2;" 
+                onAction="#goToMainMenu" />
+    </children>
+</AnchorPane>
