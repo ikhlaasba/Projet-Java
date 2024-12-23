@@ -1,12 +1,15 @@
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class AddServiceController {
 
-    @FXML private TextField service;
+    @FXML private ChoiceBox<String> serviceChoiceBox;
     @FXML private TextField duree;
     @FXML private Button submitButton;
     @FXML private Button backToMenuButton;
@@ -20,16 +23,26 @@ public class AddServiceController {
     }
 
     @FXML
+    public void initialize() {
+        ObservableList<String> SERVICES = FXCollections.observableArrayList(
+                "Alimentation", "Massage", "Animation", "Restauration"
+        );
+        serviceChoiceBox.setItems(SERVICES);
+        serviceChoiceBox.setValue("Alimentation"); // Set default value (optional)
+    }
+
+    @FXML
     private void addService() {
         try {
-            if (service.getText().isEmpty() || duree.getText().isEmpty()) {
-                showAlert(Alert.AlertType.ERROR, "Input Error", "Please fill in all the fields.");
+            if (serviceChoiceBox.getValue() == null || duree.getText().isEmpty()) {
+                showAlert(Alert.AlertType.ERROR, "Input Error", "Please select a service and fill in the duration.");
                 return;
             }
 
-            String serviceName = service.getText();
+            String serviceName = serviceChoiceBox.getValue();
             int duration = Integer.parseInt(duree.getText());
 
+            // Simulating database call
             boolean success = DAL.addService(serviceName, duration);
 
             if (success) {

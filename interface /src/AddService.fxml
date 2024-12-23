@@ -7,19 +7,14 @@
             style="-fx-background-color: #82a1cd;" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AddServiceController">
     <children>
         <!-- Title Label -->
-        <Label layoutX="140.0" layoutY="20.0" text="WHO'S NEW?" textFill="#110b61">
+        <Label layoutX="140.0" layoutY="20.0" text="ADD A SERVICE" textFill="#110b61">
             <font>
                 <Font name="Sylfaen" size="27.0" />
             </font>
         </Label>
-        <!-- Service Name -->
-        <TextField fx:id="service" layoutX="200.0" layoutY="70.0" prefHeight="35.0" prefWidth="200.0" promptText="Enter Service Name"
-                   style="-fx-border-color: transparent; -fx-border-width: 1; -fx-border-radius: 5; -fx-padding: 5; -fx-background-insets: 0, 0, 1, 2;">
-            <font>
-                <Font name="System" size="16.0" />
-            </font>
-        </TextField>
-
+        <!-- Service Name ChoiceBox -->
+        <ChoiceBox fx:id="serviceChoiceBox" layoutX="200.0" layoutY="70.0" prefHeight="35.0" prefWidth="200.0"
+                   style="-fx-background-color: white; -fx-border-radius: 5; -fx-padding: 5;" />
         <!-- Duration -->
         <TextField fx:id="duree" layoutX="200.0" layoutY="120.0" prefHeight="35.0" prefWidth="200.0" promptText="Enter Duration"
                    style="-fx-border-color: transparent; -fx-border-width: 1; -fx-border-radius: 5; -fx-padding: 5; -fx-background-insets: 0, 0, 1, 2;">
@@ -27,7 +22,6 @@
                 <Font name="System" size="16.0" />
             </font>
         </TextField>
-
         <!-- Buttons in HBox -->
         <HBox layoutX="200.0" layoutY="180.0" spacing="20.0" alignment="CENTER">
             <children>

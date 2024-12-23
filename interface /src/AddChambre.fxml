@@ -7,7 +7,7 @@
             style="-fx-background-color: #82a1cd;" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AddChambreController">
     <children>
         <!-- Title Label -->
-        <Label layoutX="200.0" layoutY="20.0" text="Add Chambre" textFill="#110b61">
+        <Label layoutX="200.0" layoutY="20.0" text="ADD A ROOM" textFill="#110b61">
             <font>
                 <Font name="Sylfaen" size="27.0" />
             </font>

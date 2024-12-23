@@ -7,7 +7,7 @@
             style="-fx-background-color: #82a1cd;" xmlns:fx="http://javafx.com/fxml/1" fx:controller="AddMenageController">
     <children>
         <!-- Title Label -->
-        <Label layoutX="140.0" layoutY="20.0" text="WHO'S NEW?" textFill="#110b61">
+        <Label layoutX="45.0" layoutY="20.0" text="ADD A HOUSEKEEPING MEMBER" textFill="#110b61">
             <font>
                 <Font name="Sylfaen" size="27.0" />
             </font>
@@ -21,7 +21,7 @@
         </TextField>
 
         <!-- Nom -->
-        <TextField fx:id="nom" layoutX="133.0" layoutY="110.0" prefHeight="35.0" prefWidth="208.0" promptText="Enter Nom"
+        <TextField fx:id="nom" layoutX="133.0" layoutY="110.0" prefHeight="35.0" prefWidth="208.0" promptText="Enter First Name"
                    style="-fx-border-color: transparent; -fx-border-width: 1; -fx-border-radius: 5; -fx-padding: 5; -fx-background-insets: 0, 0, 1, 2;">
             <font>
                 <Font name="System" size="16.0" />
@@ -29,7 +29,7 @@
         </TextField>
 
         <!-- Prenom -->
-        <TextField fx:id="prenom" layoutX="133.0" layoutY="150.0" prefHeight="35.0" prefWidth="208.0" promptText="Enter Prenom"
+        <TextField fx:id="prenom" layoutX="133.0" layoutY="150.0" prefHeight="35.0" prefWidth="208.0" promptText="Enter Last Name"
                    style="-fx-border-color: transparent; -fx-border-width: 1; -fx-border-radius: 5; -fx-padding: 5; -fx-background-insets: 0, 0, 1, 2;">
             <font>
                 <Font name="System" size="16.0" />
@@ -37,7 +37,7 @@
         </TextField>
 
         <!-- Salaire -->
-        <TextField fx:id="salaire" layoutX="133.0" layoutY="190.0" prefHeight="35.0" prefWidth="208.0" promptText="Enter Salaire"
+        <TextField fx:id="salaire" layoutX="133.0" layoutY="190.0" prefHeight="35.0" prefWidth="208.0" promptText="Enter Salary"
                    style="-fx-border-color: transparent; -fx-border-width: 1; -fx-border-radius: 5; -fx-padding: 5; -fx-background-insets: 0, 0, 1, 2;">
             <font>
                 <Font name="System" size="16.0" />
@@ -45,7 +45,7 @@
         </TextField>
 
         <!-- Horaire de Travail -->
-        <TextField fx:id="horaireDeTravail" layoutX="133.0" layoutY="230.0" prefHeight="35.0" prefWidth="208.0" promptText="Enter Horaire de Travail"
+        <TextField fx:id="horaireDeTravail" layoutX="133.0" layoutY="230.0" prefHeight="35.0" prefWidth="208.0" promptText="Enter Working Hours"
                    style="-fx-border-color: transparent; -fx-border-width: 1; -fx-border-radius: 5; -fx-padding: 5; -fx-background-insets: 0, 0, 1, 2;">
             <font>
                 <Font name="System" size="16.0" />
@@ -53,7 +53,7 @@
         </TextField>
 
         <!-- Tache -->
-        <TextField fx:id="tache" layoutX="133.0" layoutY="270.0" prefHeight="35.0" prefWidth="208.0" promptText="Enter Tache"
+        <TextField fx:id="tache" layoutX="133.0" layoutY="270.0" prefHeight="35.0" prefWidth="208.0" promptText="Enter Task"
                    style="-fx-border-color: transparent; -fx-border-width: 1; -fx-border-radius: 5; -fx-padding: 5; -fx-background-insets: 0, 0, 1, 2;">
             <font>
                 <Font name="System" size="16.0" />

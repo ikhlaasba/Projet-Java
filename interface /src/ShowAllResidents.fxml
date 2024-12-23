@@ -15,8 +15,8 @@
         <TableView fx:id="residentTable" layoutX="30.0" layoutY="70.0" prefHeight="300.0" prefWidth="620.0">
             <columns>
                 <TableColumn fx:id="idColumn" prefWidth="80.0" text="ID" />
-                <TableColumn fx:id="nomColumn" prefWidth="120.0" text="Nom" />
-                <TableColumn fx:id="prenomColumn" prefWidth="120.0" text="Prenom" />
+                <TableColumn fx:id="nomColumn" prefWidth="120.0" text="First Name" />
+                <TableColumn fx:id="prenomColumn" prefWidth="120.0" text="Last Name" />
                 <TableColumn fx:id="dossierMedicalColumn" prefWidth="140.0" text="Medical File" />
                 <TableColumn fx:id="dateNaissanceColumn" prefWidth="140.0" text="Date of Birth" />
             </columns>

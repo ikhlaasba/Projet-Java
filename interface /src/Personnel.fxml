@@ -9,12 +9,12 @@
           AnchorPane.topAnchor="20" AnchorPane.bottomAnchor="20">
         
         <!-- Title Label -->
-        <Label text="Personnel Management" alignment="CENTER" 
+        <Label text="Staff Management" alignment="CENTER" 
                style="-fx-font-size: 22; -fx-text-fill: #110b61; -fx-font-weight: bold;"/>
 
         <!-- MENAGE Section -->
         <VBox spacing="10" alignment="CENTER">
-            <Label text="Menage" style="-fx-font-size: 18; -fx-text-fill: #110b61;"/>
+            <Label text="Housekeeping Staff" style="-fx-font-size: 18; -fx-text-fill: #110b61;"/>
             <HBox spacing="10" alignment="CENTER">
                 <Button text="Add" onAction="#addMenage" 
                         style="-fx-background-color: white; -fx-text-fill: #5381E6; -fx-font-weight: bold;"/>
@@ -29,7 +29,7 @@
 
         <!-- ADMINISTRATIF Section -->
         <VBox spacing="10" alignment="CENTER">
-            <Label text="Administratif" style="-fx-font-size: 18; -fx-text-fill: #110b61;"/>
+            <Label text="Administrative Staff" style="-fx-font-size: 18; -fx-text-fill: #110b61;"/>
             <HBox spacing="10" alignment="CENTER">
                 <Button text="Add" onAction="#addAdministratif" 
                         style="-fx-background-color: white; -fx-text-fill: #5381E6; -fx-font-weight: bold;"/>
@@ -44,7 +44,7 @@
 
         <!-- SANTE Section -->
         <VBox spacing="10" alignment="CENTER">
-            <Label text="Sante" style="-fx-font-size: 18; -fx-text-fill: #110b61;"/>
+            <Label text="Medical Staff" style="-fx-font-size: 18; -fx-text-fill: #110b61;"/>
             <HBox spacing="10" alignment="CENTER">
                 <Button text="Add" onAction="#addSante" 
                         style="-fx-background-color: white; -fx-text-fill: #5381E6; -fx-font-weight: bold;"/>

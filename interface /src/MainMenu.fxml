@@ -13,7 +13,7 @@
         </Label>
 
         <!-- Personnel Button -->
-        <Button fx:id="personnelButton" prefHeight="46" prefWidth="200" text="Personnel" onAction="#goToPersonnel"
+        <Button fx:id="personnelButton" prefHeight="46" prefWidth="200" text="Staff" onAction="#goToPersonnel"
                 style="-fx-background-color: white; -fx-text-fill: #5381E6; -fx-font-size: 16; -fx-font-family: Times New Roman; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-width: 2;"/>
 
         <!-- Service Button -->
@@ -21,7 +21,7 @@
                 style="-fx-background-color: white; -fx-text-fill: #5381E6; -fx-font-size: 16; -fx-font-family: Times New Roman; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-width: 2;"/>
 
         <!-- Rooms Button -->
-        <Button fx:id="roomsButton" prefHeight="46" prefWidth="200" text="Rooms" onAction="#goToRooms"
+        <Button fx:id="roomsButton" prefHeight="46" prefWidth="200" text="Room" onAction="#goToRooms"
                 style="-fx-background-color: white; -fx-text-fill: #5381E6; -fx-font-size: 16; -fx-font-family: Times New Roman; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-width: 2;"/>
 
         <!-- Other Button -->

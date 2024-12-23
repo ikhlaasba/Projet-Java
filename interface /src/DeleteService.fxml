@@ -9,7 +9,7 @@
             fx:controller="DeleteServiceController">
     <children>
         <!-- Title Label -->
-        <Label layoutX="75.0" layoutY="20.0" text="WHO'S GONNA LEAVE US?" textFill="#110b61">
+        <Label layoutX="75.0" layoutY="20.0" text="DELETE SERVICE" textFill="#110b61">
             <font>
                 <Font name="Sylfaen" size="27.0" />
             </font>
@@ -27,7 +27,7 @@
         <HBox layoutX="200.0" layoutY="180.0" spacing="20.0" alignment="CENTER">
             <children>
                 <!-- Delete Service Button -->
-                <Button fx:id="submitButton" prefHeight="46.0" prefWidth="100.0" text="GOODBYE"
+                <Button fx:id="submitButton" prefHeight="46.0" prefWidth="100.0" text="DELETE"
                         style="-fx-background-color: white; -fx-text-fill: #5381E6; -fx-font-size: 16; -fx-font-family: Times New Roman; -fx-background-radius: 15; -fx-border-radius: 15; -fx-border-width: 2;"
                         onAction="#deleteService" />
                 <!-- Back to Main Menu Button -->
